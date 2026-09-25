@@ -3,7 +3,7 @@
 # Hi 👋, I'm Hari Prasanth
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=700&lines=Associate+Software+Engineer;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Observability+(Prometheus%2C+Grafana%2C+Zipkin);Microservices+%26+Cloud+(OpenFeign%2C+AWS);Scalability%2C+Load+Balancing+%26+Distributed+Caching;Fault+Tolerance+(Resilience4j)+%26+DB+Partitioning;Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+MCP+AI+Work" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=720&lines=Associate+Software+Engineer;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Elasticsearch+Distributed+Search+%26+Inverted+Index;Observability+(Prometheus%2C+Grafana%2C+Zipkin);Microservices+%26+Cloud+(OpenFeign%2C+AWS);Scalability%2C+Load+Balancing+%26+Distributed+Caching;Fault+Tolerance+(Resilience4j)+%26+DB+Partitioning;Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+MCP+AI+Work" alt="Typing SVG" />
 </a>
 
 <p align="center">
@@ -18,7 +18,7 @@
 <!-- Dynamic Animated Skill Icons Bar -->
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=java,spring,postgres,redis,kafka,rabbitmq,aws,docker,prometheus,grafana,maven,postman,idea,vscode,eclipse&theme=dark" alt="Dynamic Skill Icons" />
+    <img src="https://skillicons.dev/icons?i=java,spring,postgres,redis,elasticsearch,kafka,rabbitmq,aws,docker,prometheus,grafana,maven,postman,idea,vscode,eclipse&theme=dark" alt="Dynamic Skill Icons" />
   </a>
 </p>
 
@@ -31,6 +31,7 @@
 - 💼 **Role:** Associate Software Engineer
 - ☕ **Core Expertise:** Enterprise backend systems with **Java (8 / 17 / 21)**, **Spring Boot (including Spring Boot 4)**, and **Microservices Architecture**.
 - 📐 **System Design & Scalability:** Deep understanding of **High-Level Design (HLD)** and **Low-Level Design (LLD)**. Experienced with **Load Balancing** (NGINX, AWS ALB), **Horizontal & Vertical Scalability**, distributed **Caching** strategies (Redis), **Fault Tolerance Patterns** (Resilience4j Circuit Breaker, Rate Limiting, Bulkhead), and advanced **Database Design & Partitioning** (Sharding, Master-Slave Replication, Read Replicas).
+- 🔍 **Distributed Search Engine (Elasticsearch):** Designing and implementing enterprise search with **Elasticsearch** — cluster architecture, primary/replica shards, inverted indexing, tokenizers/analyzers, and Spring Data Elasticsearch integration for sub-second full-text retrieval.
 - 🔭 **Observability, Monitoring & Traceability:** Production-ready metrics and telemetry instrumentation with **Spring Boot Actuator** and **Micrometer**. Scraping and visualizing system metrics using **Prometheus** and **Grafana**, alongside distributed request tracing and latency analysis across microservices using **Zipkin**.
 - 🧩 **Design Patterns:** Extensive hands-on with Gang of Four (GoF) patterns (*Creational, Structural, Behavioral*) and Distributed Systems patterns (*Saga, CQRS, Circuit Breaker, Outbox*).
 - 🤖 **Agentic AI & MCP Work:** Building and integrating **Model Context Protocol (MCP)** tools and servers, enabling AI agents and LLMs to interact with enterprise databases, APIs, and microservices.
@@ -58,17 +59,20 @@ flowchart TD
     
     LB --> S1
     
-    subgraph StorageTier ["🗄️ Caching & Partitioned Data Tier"]
+    subgraph StorageTier ["🗄️ Caching, Partitioned Data & Search Tier"]
         direction LR
         Cache[(⚡ Redis Cache)]
         Primary[(Primary DB - Master)]
         Replica[(Read Replicas / Shards)]
+        ES[(🔍 Elasticsearch Cluster<br/>Inverted Index & Shards)]
         Primary -->|Replication| Replica
+        Primary -.->|Event Sync / CDC| ES
     end
     
     S1 <--> Cache
     S2 --> Primary
     S2 --> Replica
+    S1 <-->|Full-Text Search & Analytics| ES
 
     subgraph ObservabilityTier ["🔭 Observability, Monitoring & Traceability Tier"]
         direction LR
@@ -88,10 +92,42 @@ flowchart TD
     S2 -.->|Metrics Scraping| Prometheus
 ```
 
-#### **Architecture, Scalability & Observability Principles**
+---
+
+### 🔍 Elasticsearch Distributed Cluster Architecture
+
+```mermaid
+flowchart LR
+    App([🚀 Microservice Client<br/>Spring Data Elasticsearch]) --> Coord[🧭 Coordinating Node<br/>Request Routing & Scatter-Gather]
+    
+    subgraph ESCluster ["🔍 Distributed Elasticsearch Cluster"]
+        direction TB
+        Master[👑 Master-Eligible Node<br/>Cluster State & Metadata]
+        
+        subgraph Node1 ["Data Node 1"]
+            P0["Primary Shard 0<br/>(Inverted Index)"]
+            R1["Replica Shard 1<br/>(Backup / Read Scale)"]
+        end
+        
+        subgraph Node2 ["Data Node 2"]
+            P1["Primary Shard 1<br/>(Inverted Index)"]
+            R0["Replica Shard 0<br/>(Backup / Read Scale)"]
+        end
+    end
+    
+    Coord -->|Write / Query Routing| P0
+    Coord -->|Write / Query Routing| P1
+    Coord -.->|Read Load Balancing| R0
+    Coord -.->|Read Load Balancing| R1
+    Master -. Cluster Metadata .-> Node1
+    Master -. Cluster Metadata .-> Node2
+```
+
+#### **Architecture, Scalability & Search Principles**
 
 | Dimension | Strategy & Patterns | Tech & Implementations |
 | :--- | :--- | :--- |
+| **🔎 Distributed Search Engine** | Inverted Index, Sharding (Primary & Replica), Query-then-Fetch, Tokenization & Analyzers | Elasticsearch, Spring Data Elasticsearch |
 | **📈 Scalability** | Horizontal & Vertical Scaling, Stateless Services, Asynchronous Pipelines | Docker, AWS, Kafka, Microservices |
 | **⚖️ Load Balancing** | Round Robin, Least Connections, IP Hash, Layer 4 & Layer 7 Routing | NGINX, AWS ALB / ELB |
 | **⚡ Caching Strategy** | Cache-Aside (Lazy Loading), Write-Through, Write-Back, TTL, LRU Eviction | Redis, Distributed Cache |
@@ -101,13 +137,14 @@ flowchart TD
 | **🔍 Traceability** | Distributed request tracing, Trace ID & Span ID propagation, latency bottleneck diagnosis | Zipkin, Micrometer Tracing |
 
 <p align="left">
+  <img src="https://img.shields.io/badge/Elasticsearch-Cluster_%26_Sharding-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" alt="Elasticsearch" />
   <img src="https://img.shields.io/badge/Scalability-Horizontal_%26_Vertical-2E7D32?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Scalability" />
   <img src="https://img.shields.io/badge/Load_Balancing-NGINX_%26_ALB-009688?style=for-the-badge&logo=nginx&logoColor=white" alt="Load Balancing" />
   <img src="https://img.shields.io/badge/Distributed_Caching-Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Caching" />
   <img src="https://img.shields.io/badge/Fault_Tolerance-Resilience4j-D32F2F?style=for-the-badge&logo=spring&logoColor=white" alt="Fault Tolerance" />
   <img src="https://img.shields.io/badge/Database_Partitioning-Sharding-0277BD?style=for-the-badge&logo=postgresql&logoColor=white" alt="Database Partitioning" />
   <img src="https://img.shields.io/badge/Monitoring-Prometheus_%26_Grafana-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Monitoring" />
-  <img src="https://img.shields.io/badge/Traceability-Zipkin-FF6F00?style=for-the-badge&logoColor=white" alt="Traceability" />
+  <img src="https://img.shields.io/badge/Traceability-Zipkin-FF6F00?style=for-the-badge&logo=white" alt="Traceability" />
 </p>
 
 ---
@@ -217,8 +254,12 @@ flowchart TD
   <img src="https://img.shields.io/badge/Model_Context_Protocol_(MCP)-8A2BE2?style=for-the-badge&logo=anthropic&logoColor=white" alt="MCP" />
 </p>
 
-#### **Databases, Caching & Partitioning**
+#### **Databases, Search Engines, Caching & Partitioning**
 <p align="left">
+  <a href="https://www.elastic.co/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" width="44" height="44" title="Elasticsearch"/>
+  </a>
+  &nbsp;&nbsp;
   <a href="https://www.postgresql.org/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="44" height="44" title="PostgreSQL"/>
   </a>
@@ -244,6 +285,7 @@ flowchart TD
   </a>
 </p>
 <p align="left">
+  <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" alt="Elasticsearch" />
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
   <img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=for-the-badge&logo=influxdb&logoColor=white" alt="InfluxDB" />
@@ -290,7 +332,7 @@ flowchart TD
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swagger/swagger-original.svg" alt="Swagger" width="44" height="44" title="Swagger"/>
   </a>
   &nbsp;&nbsp;
-  <a href="https://www.selenium.dev/" target="_blank" rel="noreferrer">
+  <a href="https://selenium.dev/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" alt="Selenium" width="44" height="44" title="Selenium"/>
   </a>
 </p>
