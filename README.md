@@ -3,7 +3,7 @@
 # Hi 👋, I'm Hari Prasanth
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=650&lines=Associate+Software+Engineer+at+TYSS;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Microservices+%26+Cloud+(OpenFeign%2C+AWS);Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+Design+Patterns;Model+Context+Protocol+(MCP)+%26+AI+Integration" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=680&lines=Associate+Software+Engineer+at+TYSS;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Scalability%2C+Load+Balancing+%26+Distributed+Caching;Fault+Tolerance+(Resilience4j)+%26+DB+Partitioning;Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+MCP+AI+Work" alt="Typing SVG" />
 </a>
 
 <p align="center">
@@ -31,7 +31,8 @@
 
 - 💼 **Role:** Associate Software Engineer at **TYSS**
 - ☕ **Core Expertise:** Enterprise backend systems with **Java (8 / 17 / 21)**, **Spring Boot (including Spring Boot 4)**, and **Microservices Architecture**.
-- 📐 **System Design & Design Patterns:** Strong foundation in **High-Level Design (HLD)** and **Low-Level Design (LLD)**. Extensive hands-on with Gang of Four (GoF) patterns (*Creational, Structural, Behavioral*) and Distributed Systems patterns (*Saga, CQRS, Circuit Breaker*).
+- 📐 **System Design & Scalability:** Deep understanding of **High-Level Design (HLD)** and **Low-Level Design (LLD)**. Experienced with **Load Balancing** (NGINX, AWS ALB), **Horizontal & Vertical Scalability**, distributed **Caching** strategies (Redis), **Fault Tolerance Patterns** (Resilience4j Circuit Breaker, Rate Limiting, Bulkhead), and advanced **Database Design & Partitioning** (Sharding, Master-Slave Replication, Read Replicas).
+- 🧩 **Design Patterns:** Extensive hands-on with Gang of Four (GoF) patterns (*Creational, Structural, Behavioral*) and Distributed Systems patterns (*Saga, CQRS, Circuit Breaker, Outbox*).
 - 🤖 **Agentic AI & MCP Work:** Building and integrating **Model Context Protocol (MCP)** tools and servers, enabling AI agents and LLMs to interact with enterprise databases, APIs, and microservices.
 - ☁️ **Cloud & Containers:** Designing, deploying, and containerizing services with **AWS** & **Docker**.
 - ⚙️ **Distributed Systems & Messaging:** Event-driven architecture with **Apache Kafka** & **RabbitMQ**, declarative inter-service REST communication with **Spring Cloud (OpenFeign)**, and **Saga Pattern (Choreography)**.
@@ -39,6 +40,62 @@
 - 🛡️ **Security & Cross-Cutting Concerns:** Aspect-Oriented Programming with **Spring AOP**, plus fine-grained authentication and authorization with **Spring Security** (JWT & Role/Permission control).
 - 🔌 **Integration & Testing:** Robust **RESTful API Integration**, command-line HTTP testing with **cURL**, API automation with **Postman**, SMTP & email testing with **Mailpit**, payment gateways (Razorpay), and AI models (Hugging Face).
 - 🧠 **Problem Solving:** Actively practicing **Data Structures & Algorithms (DSA)** in Java.
+
+---
+
+### 📐 System Architecture, Scalability & Resilience
+
+```mermaid
+flowchart LR
+    A([👥 Clients / Traffic]) --> B[⚖️ Load Balancer<br/>NGINX / AWS ALB]
+    
+    subgraph Microservices ["🚀 App & Microservices Tier (Horizontal Auto-Scaling)"]
+        direction TB
+        C1["App Instance 1<br/>(Resilience4j Circuit Breaker)"]
+        C2["App Instance 2<br/>(Bulkhead & Rate Limiter)"]
+    end
+    
+    B --> C1
+    B --> C2
+    
+    subgraph CachingLayer ["⚡ Caching Tier (Sub-millisecond Latency)"]
+        D[(Redis Distributed Cache<br/>Cache-Aside / Multi-Level)]
+    end
+    
+    C1 <--> D
+    C2 <--> D
+    
+    subgraph DataTier ["🗄️ Database Tier (Partitioning & High Availability)"]
+        direction TB
+        E[(Primary DB - Master Writes)]
+        F[(Read Replica 1 / Shard A)]
+        G[(Read Replica 2 / Shard B)]
+        E -->|Replication / Partitioning| F
+        E -->|Horizontal Sharding| G
+    end
+    
+    C1 --> E
+    C2 --> F
+    C2 --> G
+```
+
+#### **Architecture & Scalability Principles**
+
+| Dimension | Strategy & Patterns | Tech & Implementations |
+| :--- | :--- | :--- |
+| **📈 Scalability** | Horizontal & Vertical Scaling, Stateless Services, Asynchronous Pipelines | Docker, AWS, Kafka, Microservices |
+| **⚖️ Load Balancing** | Round Robin, Least Connections, IP Hash, Layer 4 & Layer 7 Routing | NGINX, AWS ALB / ELB |
+| **⚡ Caching Strategy** | Cache-Aside (Lazy Loading), Write-Through, Write-Back, TTL, LRU Eviction | Redis, Distributed Cache |
+| **🛡️ Fault Tolerance** | Circuit Breaker, Bulkhead Isolation, Rate Limiting, Exponential Backoff, Fallback | Resilience4j, Spring Cloud |
+| **🗄️ Database Design & Partitioning** | Horizontal & Vertical Sharding, Range/Hash Partitioning, Master-Slave Replication, Read Replicas, B-Tree Indexing | PostgreSQL, MySQL, InfluxDB |
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Scalability-Horizontal_%26_Vertical-2E7D32?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Scalability" />
+  <img src="https://img.shields.io/badge/Load_Balancing-NGINX_%26_ALB-009688?style=for-the-badge&logo=nginx&logoColor=white" alt="Load Balancing" />
+  <img src="https://img.shields.io/badge/Distributed_Caching-Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Caching" />
+  <img src="https://img.shields.io/badge/Fault_Tolerance-Resilience4j_Circuit_Breaker-D32F2F?style=for-the-badge&logo=spring&logoColor=white" alt="Fault Tolerance" />
+  <img src="https://img.shields.io/badge/Database_Design-Partitioning_%26_Sharding-0277BD?style=for-the-badge&logo=postgresql&logoColor=white" alt="Database Partitioning" />
+</p>
 
 ---
 
@@ -50,7 +107,7 @@
   <img src="https://img.shields.io/badge/LLD_(Low--Level_Design)-1565C0?style=for-the-badge" alt="LLD" />
   <img src="https://img.shields.io/badge/Design_Patterns-E040FB?style=for-the-badge" alt="Design Patterns" />
   <img src="https://img.shields.io/badge/Microservices_Architecture-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Microservices Architecture" />
-  <img src="https://img.shields.io/badge/Model_Context_Protocol_(MCP)-8A2BE2?style=for-the-badge&logoColor=white" alt="MCP" />
+  <img src="https://img.shields.io/badge/Model_Context_Protocol_(MCP)-8A2BE2?style=for-the-badge&logo=anthropic&logoColor=white" alt="MCP" />
   <img src="https://img.shields.io/badge/Saga_Pattern-Choreography-blueviolet?style=for-the-badge" alt="Saga Pattern" />
 </p>
 
@@ -123,7 +180,7 @@
   <img src="https://img.shields.io/badge/Model_Context_Protocol_(MCP)-8A2BE2?style=for-the-badge&logoColor=white" alt="MCP" />
 </p>
 
-#### **Databases & Caching**
+#### **Databases, Caching & Partitioning**
 <p align="left">
   <a href="https://www.postgresql.org/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="44" height="44" title="PostgreSQL"/>
@@ -158,7 +215,7 @@
   <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white" alt="Oracle" />
 </p>
 
-#### **Cloud, DevOps, Tools & Testing**
+#### **Cloud, DevOps, Tools & Infrastructure**
 <p align="left">
   <a href="https://aws.amazon.com/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="48" height="48" title="AWS"/>
@@ -166,6 +223,10 @@
   &nbsp;&nbsp;
   <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" width="44" height="44" title="Docker"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://nginx.org/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="NGINX" width="44" height="44" title="NGINX"/>
   </a>
   &nbsp;&nbsp;
   <a href="https://curl.se/" target="_blank" rel="noreferrer">
@@ -199,6 +260,7 @@
 <p align="left">
   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="AWS" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="NGINX" />
   <img src="https://img.shields.io/badge/cURL-07354A?style=for-the-badge&logo=curl&logoColor=white" alt="cURL" />
   <img src="https://img.shields.io/badge/Mailpit-0052CC?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Mailpit" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
