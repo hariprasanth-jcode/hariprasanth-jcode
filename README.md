@@ -3,7 +3,7 @@
 # Hi 👋, I'm Hari Prasanth
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=680&lines=Associate+Software+Engineer+at+TYSS;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Scalability%2C+Load+Balancing+%26+Distributed+Caching;Fault+Tolerance+(Resilience4j)+%26+DB+Partitioning;Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+MCP+AI+Work" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=680&lines=Associate+Software+Engineer;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Scalability%2C+Load+Balancing+%26+Distributed+Caching;Fault+Tolerance+(Resilience4j)+%26+DB+Partitioning;Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+MCP+AI+Work" alt="Typing SVG" />
 </a>
 
 <p align="center">
@@ -13,7 +13,6 @@
   <a href="https://github.com/hariprasanth-jcode">
     <img src="https://img.shields.io/badge/GitHub-hariprasanth--jcode-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <img src="https://komarev.com/ghpvc/?username=hariprasanth-jcode&label=PROFILE+VIEWS&style=for-the-badge&color=blueviolet" alt="Profile Views" />
 </p>
 
 <!-- Dynamic Animated Skill Icons Bar -->
@@ -29,7 +28,7 @@
 
 ### 👨‍💻 About Me
 
-- 💼 **Role:** Associate Software Engineer at **TYSS**
+- 💼 **Role:** Associate Software Engineer
 - ☕ **Core Expertise:** Enterprise backend systems with **Java (8 / 17 / 21)**, **Spring Boot (including Spring Boot 4)**, and **Microservices Architecture**.
 - 📐 **System Design & Scalability:** Deep understanding of **High-Level Design (HLD)** and **Low-Level Design (LLD)**. Experienced with **Load Balancing** (NGINX, AWS ALB), **Horizontal & Vertical Scalability**, distributed **Caching** strategies (Redis), **Fault Tolerance Patterns** (Resilience4j Circuit Breaker, Rate Limiting, Bulkhead), and advanced **Database Design & Partitioning** (Sharding, Master-Slave Replication, Read Replicas).
 - 🧩 **Design Patterns:** Extensive hands-on with Gang of Four (GoF) patterns (*Creational, Structural, Behavioral*) and Distributed Systems patterns (*Saga, CQRS, Circuit Breaker, Outbox*).
@@ -177,7 +176,7 @@ flowchart LR
   <img src="https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" alt="Kafka" />
   <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ" />
   <img src="https://img.shields.io/badge/ActiveMQ-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="ActiveMQ" />
-  <img src="https://img.shields.io/badge/Model_Context_Protocol_(MCP)-8A2BE2?style=for-the-badge&logoColor=white" alt="MCP" />
+  <img src="https://img.shields.io/badge/Model_Context_Protocol_(MCP)-8A2BE2?style=for-the-badge&logo=anthropic&logoColor=white" alt="MCP" />
 </p>
 
 #### **Databases, Caching & Partitioning**
@@ -253,7 +252,7 @@ flowchart LR
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swagger/swagger-original.svg" alt="Swagger" width="44" height="44" title="Swagger"/>
   </a>
   &nbsp;&nbsp;
-  <a href="https://www.selenium.dev/" target="_blank" rel="noreferrer">
+  <a href="https://selenium.dev/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" alt="Selenium" width="44" height="44" title="Selenium"/>
   </a>
 </p>
