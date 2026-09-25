@@ -3,7 +3,7 @@
 # Hi 👋, I'm Hari Prasanth
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=620&lines=Associate+Software+Engineer+at+TYSS;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Microservices+%26+Cloud+(OpenFeign%2C+AWS);Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%26+LLD)+Expert" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=650&lines=Associate+Software+Engineer+at+TYSS;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Microservices+%26+Cloud+(OpenFeign%2C+AWS);Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+Design+Patterns;Model+Context+Protocol+(MCP)+%26+AI+Integration" alt="Typing SVG" />
 </a>
 
 <p align="center">
@@ -31,26 +31,35 @@
 
 - 💼 **Role:** Associate Software Engineer at **TYSS**
 - ☕ **Core Expertise:** Enterprise backend systems with **Java (8 / 17 / 21)**, **Spring Boot (including Spring Boot 4)**, and **Microservices Architecture**.
-- 📐 **System Design:** Strong foundation in **High-Level Design (HLD)** and **Low-Level Design (LLD)** — scalable architectures, microservice patterns, OOP design principles, and UML modeling.
+- 📐 **System Design & Design Patterns:** Strong foundation in **High-Level Design (HLD)** and **Low-Level Design (LLD)**. Extensive hands-on with Gang of Four (GoF) patterns (*Creational, Structural, Behavioral*) and Distributed Systems patterns (*Saga, CQRS, Circuit Breaker*).
+- 🤖 **Agentic AI & MCP Work:** Building and integrating **Model Context Protocol (MCP)** tools and servers, enabling AI agents and LLMs to interact with enterprise databases, APIs, and microservices.
 - ☁️ **Cloud & Containers:** Designing, deploying, and containerizing services with **AWS** & **Docker**.
 - ⚙️ **Distributed Systems & Messaging:** Event-driven architecture with **Apache Kafka** & **RabbitMQ**, declarative inter-service REST communication with **Spring Cloud (OpenFeign)**, and **Saga Pattern (Choreography)**.
 - ⚡ **Caching, Relational & Time-Series DBs:** High-performance caching with **Redis**, time-series data with **InfluxDB**, and relational/document persistence with **PostgreSQL**, MySQL, MongoDB, and Oracle.
 - 🛡️ **Security & Cross-Cutting Concerns:** Aspect-Oriented Programming with **Spring AOP**, plus fine-grained authentication and authorization with **Spring Security** (JWT & Role/Permission control).
-- 🔌 **Integration & Testing:** Robust **RESTful API Integration**, SMTP & email workflow testing with **Mailpit**, payment gateways (Razorpay), and AI/LLM integration (Hugging Face).
+- 🔌 **Integration & Testing:** Robust **RESTful API Integration**, command-line HTTP testing with **cURL**, API automation with **Postman**, SMTP & email testing with **Mailpit**, payment gateways (Razorpay), and AI models (Hugging Face).
 - 🧠 **Problem Solving:** Actively practicing **Data Structures & Algorithms (DSA)** in Java.
 
 ---
 
 ### 🛠️ Tech Stack & Skills
 
-#### **Architecture & System Design**
+#### **Architecture, System Design & Design Patterns**
 <p align="left">
   <img src="https://img.shields.io/badge/HLD_(High--Level_Design)-2E7D32?style=for-the-badge" alt="HLD" />
   <img src="https://img.shields.io/badge/LLD_(Low--Level_Design)-1565C0?style=for-the-badge" alt="LLD" />
   <img src="https://img.shields.io/badge/Design_Patterns-E040FB?style=for-the-badge" alt="Design Patterns" />
   <img src="https://img.shields.io/badge/Microservices_Architecture-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Microservices Architecture" />
+  <img src="https://img.shields.io/badge/Model_Context_Protocol_(MCP)-8A2BE2?style=for-the-badge&logoColor=white" alt="MCP" />
   <img src="https://img.shields.io/badge/Saga_Pattern-Choreography-blueviolet?style=for-the-badge" alt="Saga Pattern" />
 </p>
+
+- 🏗️ **Creational Patterns:** Singleton, Factory Method, Abstract Factory, Builder, Prototype
+- 🧩 **Structural Patterns:** Adapter, Decorator, Facade, Proxy, Composite
+- 🔄 **Behavioral Patterns:** Observer, Strategy, Chain of Responsibility, Command, Template Method, State
+- 🌐 **Enterprise & Distributed Patterns:** Saga Pattern (Choreography & Orchestration), CQRS, Circuit Breaker, Outbox Pattern, Event Sourcing
+
+---
 
 #### **Languages**
 <p align="left">
@@ -93,7 +102,7 @@
   <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
 </p>
 
-#### **Messaging & Event Streaming**
+#### **Messaging, Event Streaming & AI Agent Protocols**
 <p align="left">
   <a href="https://kafka.apache.org/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apachekafka/apachekafka-original.svg" alt="Apache Kafka" width="44" height="44" title="Apache Kafka"/>
@@ -111,6 +120,7 @@
   <img src="https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" alt="Kafka" />
   <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ" />
   <img src="https://img.shields.io/badge/ActiveMQ-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="ActiveMQ" />
+  <img src="https://img.shields.io/badge/Model_Context_Protocol_(MCP)-8A2BE2?style=for-the-badge&logoColor=white" alt="MCP" />
 </p>
 
 #### **Databases & Caching**
@@ -158,6 +168,10 @@
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" width="44" height="44" title="Docker"/>
   </a>
   &nbsp;&nbsp;
+  <a href="https://curl.se/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/curl/curl-original.svg" alt="cURL" width="44" height="44" title="cURL"/>
+  </a>
+  &nbsp;&nbsp;
   <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="44" height="44" title="Git"/>
   </a>
@@ -185,6 +199,7 @@
 <p align="left">
   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="AWS" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/cURL-07354A?style=for-the-badge&logo=curl&logoColor=white" alt="cURL" />
   <img src="https://img.shields.io/badge/Mailpit-0052CC?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Mailpit" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
