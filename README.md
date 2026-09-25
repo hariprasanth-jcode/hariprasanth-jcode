@@ -3,7 +3,7 @@
 # Hi 👋, I'm Hari Prasanth
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=680&lines=Associate+Software+Engineer;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Scalability%2C+Load+Balancing+%26+Distributed+Caching;Fault+Tolerance+(Resilience4j)+%26+DB+Partitioning;Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+MCP+AI+Work" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=700&lines=Associate+Software+Engineer;Java+(8%2F17%2F21)+%26+Spring+Boot+4+Specialist;Observability+(Prometheus%2C+Grafana%2C+Zipkin);Microservices+%26+Cloud+(OpenFeign%2C+AWS);Scalability%2C+Load+Balancing+%26+Distributed+Caching;Fault+Tolerance+(Resilience4j)+%26+DB+Partitioning;Kafka+%26+RabbitMQ+Event-Driven+Architecture;System+Design+(HLD+%2F+LLD)+%26+MCP+AI+Work" alt="Typing SVG" />
 </a>
 
 <p align="center">
@@ -18,7 +18,7 @@
 <!-- Dynamic Animated Skill Icons Bar -->
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=java,spring,postgres,redis,kafka,rabbitmq,aws,docker,maven,postman,idea,vscode,eclipse&theme=dark" alt="Dynamic Skill Icons" />
+    <img src="https://skillicons.dev/icons?i=java,spring,postgres,redis,kafka,rabbitmq,aws,docker,prometheus,grafana,maven,postman,idea,vscode,eclipse&theme=dark" alt="Dynamic Skill Icons" />
   </a>
 </p>
 
@@ -31,6 +31,7 @@
 - 💼 **Role:** Associate Software Engineer
 - ☕ **Core Expertise:** Enterprise backend systems with **Java (8 / 17 / 21)**, **Spring Boot (including Spring Boot 4)**, and **Microservices Architecture**.
 - 📐 **System Design & Scalability:** Deep understanding of **High-Level Design (HLD)** and **Low-Level Design (LLD)**. Experienced with **Load Balancing** (NGINX, AWS ALB), **Horizontal & Vertical Scalability**, distributed **Caching** strategies (Redis), **Fault Tolerance Patterns** (Resilience4j Circuit Breaker, Rate Limiting, Bulkhead), and advanced **Database Design & Partitioning** (Sharding, Master-Slave Replication, Read Replicas).
+- 🔭 **Observability, Monitoring & Traceability:** Production-ready metrics and telemetry instrumentation with **Spring Boot Actuator** and **Micrometer**. Scraping and visualizing system metrics using **Prometheus** and **Grafana**, alongside distributed request tracing and latency analysis across microservices using **Zipkin**.
 - 🧩 **Design Patterns:** Extensive hands-on with Gang of Four (GoF) patterns (*Creational, Structural, Behavioral*) and Distributed Systems patterns (*Saga, CQRS, Circuit Breaker, Outbox*).
 - 🤖 **Agentic AI & MCP Work:** Building and integrating **Model Context Protocol (MCP)** tools and servers, enabling AI agents and LLMs to interact with enterprise databases, APIs, and microservices.
 - ☁️ **Cloud & Containers:** Designing, deploying, and containerizing services with **AWS** & **Docker**.
@@ -42,43 +43,52 @@
 
 ---
 
-### 📐 System Architecture, Scalability & Resilience
+### 📐 System Architecture, Scalability & Observability
 
 ```mermaid
-flowchart LR
-    A([👥 Clients / Traffic]) --> B[⚖️ Load Balancer<br/>NGINX / AWS ALB]
+flowchart TD
+    Clients([👥 Clients / Traffic]) --> LB[⚖️ Load Balancer<br/>NGINX / AWS ALB]
     
-    subgraph Microservices ["🚀 App & Microservices Tier (Horizontal Auto-Scaling)"]
-        direction TB
-        C1["App Instance 1<br/>(Resilience4j Circuit Breaker)"]
-        C2["App Instance 2<br/>(Bulkhead & Rate Limiter)"]
+    subgraph MicroservicesTier ["🚀 Microservices Layer (Auto-Scaling & Resilience)"]
+        direction LR
+        S1["App Service A<br/>(Resilience4j & Feign)"]
+        S2["App Service B<br/>(Spring Boot Actuator)"]
+        S1 -->|Inter-Service Call<br/>with Trace/Span ID| S2
     end
     
-    B --> C1
-    B --> C2
+    LB --> S1
     
-    subgraph CachingLayer ["⚡ Caching Tier (Sub-millisecond Latency)"]
-        D[(Redis Distributed Cache<br/>Cache-Aside / Multi-Level)]
+    subgraph StorageTier ["🗄️ Caching & Partitioned Data Tier"]
+        direction LR
+        Cache[(⚡ Redis Cache)]
+        Primary[(Primary DB - Master)]
+        Replica[(Read Replicas / Shards)]
+        Primary -->|Replication| Replica
     end
     
-    C1 <--> D
-    C2 <--> D
-    
-    subgraph DataTier ["🗄️ Database Tier (Partitioning & High Availability)"]
-        direction TB
-        E[(Primary DB - Master Writes)]
-        F[(Read Replica 1 / Shard A)]
-        G[(Read Replica 2 / Shard B)]
-        E -->|Replication / Partitioning| F
-        E -->|Horizontal Sharding| G
+    S1 <--> Cache
+    S2 --> Primary
+    S2 --> Replica
+
+    subgraph ObservabilityTier ["🔭 Observability, Monitoring & Traceability Tier"]
+        direction LR
+        subgraph TracingSub ["Traceability"]
+            Zipkin["📊 Zipkin Server<br/>(Distributed Tracing)"]
+        end
+        subgraph MonitoringSub ["Metrics & Monitoring"]
+            Prometheus["🔥 Prometheus<br/>(Metrics Scraping)"]
+            Grafana["📈 Grafana<br/>(Dashboards & Alerts)"]
+            Prometheus --> Grafana
+        end
     end
-    
-    C1 --> E
-    C2 --> F
-    C2 --> G
+
+    S1 -.->|Trace Spans| Zipkin
+    S2 -.->|Trace Spans| Zipkin
+    S1 -.->|Metrics Scraping| Prometheus
+    S2 -.->|Metrics Scraping| Prometheus
 ```
 
-#### **Architecture & Scalability Principles**
+#### **Architecture, Scalability & Observability Principles**
 
 | Dimension | Strategy & Patterns | Tech & Implementations |
 | :--- | :--- | :--- |
@@ -87,13 +97,17 @@ flowchart LR
 | **⚡ Caching Strategy** | Cache-Aside (Lazy Loading), Write-Through, Write-Back, TTL, LRU Eviction | Redis, Distributed Cache |
 | **🛡️ Fault Tolerance** | Circuit Breaker, Bulkhead Isolation, Rate Limiting, Exponential Backoff, Fallback | Resilience4j, Spring Cloud |
 | **🗄️ Database Design & Partitioning** | Horizontal & Vertical Sharding, Range/Hash Partitioning, Master-Slave Replication, Read Replicas, B-Tree Indexing | PostgreSQL, MySQL, InfluxDB |
+| **📊 Monitoring & Metrics** | Real-time metric scraping, SLA/SLO tracking, threshold alerting, custom dashboards | Prometheus, Grafana, Spring Boot Actuator |
+| **🔍 Traceability** | Distributed request tracing, Trace ID & Span ID propagation, latency bottleneck diagnosis | Zipkin, Micrometer Tracing |
 
 <p align="left">
   <img src="https://img.shields.io/badge/Scalability-Horizontal_%26_Vertical-2E7D32?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Scalability" />
   <img src="https://img.shields.io/badge/Load_Balancing-NGINX_%26_ALB-009688?style=for-the-badge&logo=nginx&logoColor=white" alt="Load Balancing" />
   <img src="https://img.shields.io/badge/Distributed_Caching-Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Caching" />
-  <img src="https://img.shields.io/badge/Fault_Tolerance-Resilience4j_Circuit_Breaker-D32F2F?style=for-the-badge&logo=spring&logoColor=white" alt="Fault Tolerance" />
-  <img src="https://img.shields.io/badge/Database_Design-Partitioning_%26_Sharding-0277BD?style=for-the-badge&logo=postgresql&logoColor=white" alt="Database Partitioning" />
+  <img src="https://img.shields.io/badge/Fault_Tolerance-Resilience4j-D32F2F?style=for-the-badge&logo=spring&logoColor=white" alt="Fault Tolerance" />
+  <img src="https://img.shields.io/badge/Database_Partitioning-Sharding-0277BD?style=for-the-badge&logo=postgresql&logoColor=white" alt="Database Partitioning" />
+  <img src="https://img.shields.io/badge/Monitoring-Prometheus_%26_Grafana-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Monitoring" />
+  <img src="https://img.shields.io/badge/Traceability-Zipkin-FF6F00?style=for-the-badge&logoColor=white" alt="Traceability" />
 </p>
 
 ---
@@ -114,6 +128,30 @@ flowchart LR
 - 🧩 **Structural Patterns:** Adapter, Decorator, Facade, Proxy, Composite
 - 🔄 **Behavioral Patterns:** Observer, Strategy, Chain of Responsibility, Command, Template Method, State
 - 🌐 **Enterprise & Distributed Patterns:** Saga Pattern (Choreography & Orchestration), CQRS, Circuit Breaker, Outbox Pattern, Event Sourcing
+
+---
+
+#### **Observability, Monitoring & Traceability**
+<p align="left">
+  <a href="https://prometheus.io/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/prometheus/prometheus-original.svg" alt="Prometheus" width="44" height="44" title="Prometheus"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://grafana.com/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/grafana/grafana-original.svg" alt="Grafana" width="44" height="44" title="Grafana"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://zipkin.io/" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/Zipkin-Distributed_Tracing-FF6F00?style=for-the-badge&logoColor=white" alt="Zipkin" height="35" title="Zipkin Tracing"/>
+  </a>
+</p>
+<p align="left">
+  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Prometheus" />
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana" />
+  <img src="https://img.shields.io/badge/Zipkin-000000?style=for-the-badge&logoColor=white" alt="Zipkin" />
+  <img src="https://img.shields.io/badge/Micrometer-Metrics_%26_Tracing-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Micrometer" />
+  <img src="https://img.shields.io/badge/Spring_Boot_Actuator-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot Actuator" />
+</p>
 
 ---
 
@@ -252,7 +290,7 @@ flowchart LR
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swagger/swagger-original.svg" alt="Swagger" width="44" height="44" title="Swagger"/>
   </a>
   &nbsp;&nbsp;
-  <a href="https://selenium.dev/" target="_blank" rel="noreferrer">
+  <a href="https://www.selenium.dev/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" alt="Selenium" width="44" height="44" title="Selenium"/>
   </a>
 </p>
