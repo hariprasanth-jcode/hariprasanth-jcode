@@ -22,16 +22,26 @@
 
 - 💼 **Role:** Associate Software Engineer at **TYSS**
 - ☕ **Core Expertise:** Enterprise backend systems with **Java (8 / 17 / 21)**, **Spring Boot (including Spring Boot 4)**, and **Microservices Architecture**.
-- ☁️ **Cloud & Containers:** Designing, deploying, and running services with **AWS** & **Docker**.
+- 📐 **System Design:** Strong foundation in **High-Level Design (HLD)** and **Low-Level Design (LLD)** — scalable architectures, microservice patterns, OOP design principles, and UML modeling.
+- ☁️ **Cloud & Containers:** Designing, deploying, and containerizing services with **AWS** & **Docker**.
 - ⚙️ **Distributed Systems & Messaging:** Event-driven architecture with **Apache Kafka** & **RabbitMQ**, declarative inter-service REST communication with **Spring Cloud (OpenFeign)**, and **Saga Pattern (Choreography)**.
-- ⚡ **Caching & Persistence:** High-performance caching with **Redis**, paired with relational databases like **PostgreSQL**, MySQL, and Oracle.
+- ⚡ **Caching, Relational & Time-Series DBs:** High-performance caching with **Redis**, time-series data with **InfluxDB**, and relational/document persistence with **PostgreSQL**, MySQL, MongoDB, and Oracle.
 - 🛡️ **Security & Cross-Cutting Concerns:** Aspect-Oriented Programming with **Spring AOP**, plus fine-grained authentication and authorization with **Spring Security** (JWT & Role/Permission control).
-- 🔌 **Integration & APIs:** Robust **RESTful API Integration**, external payment gateways (Razorpay), and AI/LLM integration (Hugging Face).
+- 🔌 **Integration & Testing:** Robust **RESTful API Integration**, SMTP & email workflow testing with **Mailpit**, payment gateways (Razorpay), and AI/LLM integration (Hugging Face).
 - 🧠 **Problem Solving:** Actively practicing **Data Structures & Algorithms (DSA)** in Java.
 
 ---
 
 ### 🛠️ Tech Stack & Skills
+
+#### **Architecture & System Design**
+<p align="left">
+  <img src="https://img.shields.io/badge/HLD_(High--Level_Design)-2E7D32?style=for-the-badge" alt="HLD" />
+  <img src="https://img.shields.io/badge/LLD_(Low--Level_Design)-1565C0?style=for-the-badge" alt="LLD" />
+  <img src="https://img.shields.io/badge/Design_Patterns-E040FB?style=for-the-badge" alt="Design Patterns" />
+  <img src="https://img.shields.io/badge/Microservices_Architecture-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Microservices Architecture" />
+  <img src="https://img.shields.io/badge/Saga_Pattern-Choreography-blueviolet?style=for-the-badge" alt="Saga Pattern" />
+</p>
 
 #### **Languages**
 <p align="left">
@@ -46,7 +56,6 @@
 <p align="left">
   <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot" />
   <img src="https://img.shields.io/badge/Spring_Boot_4-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot 4" />
-  <img src="https://img.shields.io/badge/Microservices-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Microservices" />
   <img src="https://img.shields.io/badge/Spring_Cloud_(OpenFeign)-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Cloud OpenFeign" />
   <img src="https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white" alt="Spring Security" />
   <img src="https://img.shields.io/badge/Spring_AOP-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring AOP" />
@@ -56,27 +65,28 @@
   <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
 </p>
 
-#### **Messaging, Event Streaming & Architecture**
+#### **Messaging & Event Streaming**
 <p align="left">
   <img src="https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" alt="Kafka" />
   <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ" />
   <img src="https://img.shields.io/badge/ActiveMQ-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="ActiveMQ" />
-  <img src="https://img.shields.io/badge/Saga_Pattern-Choreography-blueviolet?style=for-the-badge" alt="Saga Pattern" />
 </p>
 
 #### **Databases & Caching**
 <p align="left">
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+  <img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=for-the-badge&logo=influxdb&logoColor=white" alt="InfluxDB" />
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
   <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white" alt="Oracle" />
 </p>
 
-#### **Cloud, DevOps & Tools**
+#### **Cloud, DevOps, Tools & Testing**
 <p align="left">
   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="AWS" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Mailpit-0052CC?style=for-the-badge&logo=gmail&logoColor=white" alt="Mailpit" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   <img src="https://img.shields.io/badge/Apache_Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven" />
